@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <title>Encriptador</title>
+  </head>
+
+  <body>
+    <main>
+      <section>
+        <header>
+          <div class="logo">
+            <a href="index.html"
+              ><img src="./utilities/Logo.svg" alt="Logo"
+            /></a>
+          </div>
+        </header>
+
+        <div class="container_text">
+          <textarea
+            name="containertext"
+            id="container_text"
+            cols="30"
+            rows="10"
+            placeholder="Ingrese el texto aqui"
+            onkeypress="return (event.charCode >= 97 && event.charCode <= 122 || event.charCode == 32 || event.charCode == 241)"
+            min="1"
+          ></textarea>
+
+          <div class="container_alert">
+            <div class="guia">
+              <img
+                src="./utilities/bi_exclamation-circle-fill.svg"
+                alt="alerta icon"
+              />
+              <label for="guia">Solo letras minúsculas y sin acentos</label>
+            </div>
+
+            <div class="style_btn">
+              <button id="btn_encrypt" onclick="encriptarBtn()">
+                Encriptar
+              </button>
+              <button id="btn_decrypt" onclick="desencriptarBtn()">
+                Desencriptar
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section_2">
+        <div class="container_right">
+          <div class="img_muneco">
+            <img src="./utilities/Muñeco.svg" alt="muñeco" />
+          </div>
+          <p id="text_1">Ningún mensaje fue encontrado</p>
+          <p id="text_2">
+            Ingresa el texto que desees encriptar o desencriptar.
+          </p>
+
+          <div class="hidden">
+            <p class="text_result"></p>
+          </div>
+          <div class="hidden">
+            <button id="btn_copy">Copiar</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="./assets/script.js"></script>
+  </body>
+</html>
